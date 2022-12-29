@@ -1,0 +1,919 @@
+@charset "utf-8";
+/* html {
+    10px/16px
+    font-size: 62.5%;
+} */
+/* 기본 CSS */
+body {
+    /* font-family: 'Titillium Web', sans-serif; */
+    font-family: 'PT Serif',serif;
+}
+#wrap {
+    /* (1132px) */
+}
+.w1132 {
+    width: 1132px;
+    margin: 0 auto;
+}
+/* 지정 너비 적용 클래스 */
+.container {
+    max-width: 1132px;
+    margin: 0 auto;
+}
+/* 각 타이틀 스타일 */
+.sec_title {
+    font-size: 42px;
+    font-size: 2.625rem;
+    color: #836fa9;
+}
+/* 구분선 스타일 */
+.divider {
+    max-width: 1300px;
+    margin: 0 auto;
+    height: 2px;
+    background: #eee;
+    margin-top: 80px;
+}
+/* 짧은 구분선 스타일 */
+.m_divider {
+    width: 20px;
+    margin: 0 auto;
+    height: 2px;
+    background: #fff;
+    margin-top: 80px;
+}
+.header {
+    font-family: 'Square Peg', cursive;
+    font-weight: 600;
+}
+
+/* 모바일 퍼스트 = 모바일용 공통 스타일 */
+/* 1. Header */
+.header {
+    padding: 18px 5%;
+    /* 위치 기준 값 */
+    position: relative;
+}
+/* Logo */
+.header .logo {
+    /* 플롯 */
+    float: left;
+}
+.header .logo a {
+    font-size: 26px;
+    font-size: 1.625rem;
+    color: #836fa9;
+    letter-spacing: -2px;
+    font-weight: 500;
+}
+/* GNB */
+.header .gnb {
+    width: 100%;
+    background: #836fa9;
+    /* 포지션 */
+    position: absolute;
+    left: 0;
+    top: 100%;
+    z-index: 9999999;
+    /* 스크립트 연동 = 처음 로딩 시 안 보이도록 코딩 */
+    display: none;
+}
+.header .gnb li {
+    border-bottom: 1px solid #b39ddb;
+}
+.header .gnb li a {
+    display: block;
+    font-size: 14px;
+    font-size: 0.875rem;
+    padding: 14px 0 14px 5%;
+}
+
+/* Hamberger Toggle */
+.header .menu_toggle_btn {
+    width: 20px;
+    margin-top: 4px;
+    cursor: pointer;
+    /* 플롯 */
+    float: right;
+}
+.header .menu_toggle_btn span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #b39ddb;
+}
+.header .menu_toggle_btn span:nth-child(2) {
+    margin: 5px 0;
+}
+
+/* 2. Slider */
+.slider .slider_img {
+    max-width: 100%;
+    width: 100%;
+}
+
+.slider .slider_img img {
+    max-width: 100%;
+    width: 100%;
+}
+
+/* 3-1. Display */
+.display_section { 
+    margin-top: 60px;
+    text-align: center;
+}
+.display_section .sec_title {
+    margin-bottom: 32px;
+}
+.display_section .desc {
+    color: #616161;
+    line-height: 2;
+}
+
+/* 3-2. Promotion */
+.promotion_section {
+    margin-top: 68px;
+}
+.promotion_section .promotion_list li {
+    margin-top: 48px;
+    text-align: center;
+}
+.promotion_section .promotion_list li:nth-child(1) {
+    margin-top: 0;
+}
+.promotion_section .promotion_list li img {
+    width: 52px;
+    height: 52px;
+}
+.promotion_section .promotion_list li h3 {
+    margin: 30px 0 20px;
+    color: #836fa9;
+}
+.promotion_section .promotion_list li p {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 14px;
+    font-size: 0.875rem;
+    color: #616161;
+    line-height: 1.5;
+}
+
+/* 3-3. FILMOGRAPHY */
+.filmo_section {
+    margin-top: 80px;
+}
+.filmo_section .sec_title {
+    margin: 0 auto;
+    /* text-align: center; */
+    margin-bottom: 48px;
+}
+.filmo_section .filmo_list li {
+    width: 100%;
+}
+.filmo_section .filmo_list li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.filmo_section .filmo_list li img {
+    max-width: 100%;
+    width: 100%;
+}
+
+/* 이미지 정보 효과 */
+.filmo_section .filmo_list li a {
+    /* 위치기준값 */
+    position: relative;
+}
+/* a. 셀로판지 효과 */
+.filmo_section .filmo_list li a:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #b39ddb;
+    opacity: 0;
+    /* 포지션 */
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    transition: all 0.5s;
+}
+/* a-1. 셀로판지 호버시 효과 */
+.filmo_section .filmo_list li a:hover:before {
+    opacity: 0.7;
+}
+
+/* 정보 텍스트 CSS */
+.filmo_section .filmo_list li div h3 {
+    font-size: 32px;
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 8px;
+}
+.filmo_section .filmo_list li div span {
+    font-size: 24px;
+    font-size: 0.6875rem;
+    color: #fff;
+}
+.filmo_section .filmo_list li div {
+    /* 포지션 */
+    position: absolute;
+    left: 100px;
+    top: 45%;
+    z-index: 200;
+    opacity: 0;
+    transition: all 0.3s;
+}
+/* b. 정보 텍스트 이동 효과 */
+.filmo_section .filmo_list li a:hover div {
+    opacity: 1;
+    transform: translateY(30px);
+}
+
+/* 3-4. MAJORWORKS */
+.activi_section {
+    width: 100%;
+    margin-top: 80px;
+}
+.activi_section .sec_title {
+    margin-bottom: 48px;
+    /* text-align: center; */
+}
+.activi_section .activi_list li {
+    width: 100%;
+    margin-top: 48px;
+}
+.activi_section .activi_list li:nth-child(1) {
+    margin-top: 0;
+}
+.activi_section .activi_list li img {
+    max-width: 100%;
+    width: 100%;
+}
+.activi_section .activi_list li time {
+    display: block;
+    font-size: 12px;
+    font-size: 0.75rem;
+    color: #9e9e9e;
+    margin: 10px 0;
+}
+.activi_section .activi_list li h3 {
+    color: #424242;
+    line-height: 1.6;
+}
+
+/* 3-5. Contact */
+.apply_section {
+    margin-top: 100px;
+}
+.apply_section .sec_title {
+    margin-bottom: 48px;
+    /* text-align: center; */
+}
+
+input, textarea {
+    border-bottom: 1px solid #757575;
+    font-size: 12px;
+    font-size: 0.75rem;
+    font-family: 'Exo 2', sans-serif;
+    color: #836fa9;
+    border-radius: 0%;
+}
+
+/* Input Form */
+.apply_section .form_box .form input {
+    padding-bottom: 14px;
+    margin-bottom: 40px;
+}
+
+/* Textarea Form */
+.apply_section .form_box .txta textarea {
+    height: 170px;
+}
+.apply_section .form_box .send_btn {
+    margin-top: 36px;
+    text-align: right;
+}
+.apply_section .form_box .send_btn button {
+    font-size: 12px;
+    font-size: 0.75rem;
+    color: #fff;
+    background: #836fa9;
+    padding: 15px;
+    cursor: pointer;
+}
+
+/* Footer */
+/* .footer {
+    margin-top: 100px;
+}
+.footer iframe {
+    width: 100%;
+    height: 320px;
+}
+.footer iframe p {
+    margin: 20px 0;
+    color: darkgray;
+    text-align: center;
+    font-size: 0.75rem;
+} */
+    /* Footer */
+footer {
+    margin-top: 106px;
+    background-color: #b39ddb;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    line-height: 1.5;
+}
+.footer_information {
+    padding-left: 72px;
+    padding-right: 68px;
+}
+.footer_left,
+.footer_contact {
+    margin-top: 40px;
+}
+.footer_gnb {
+    /* 플렉스 */
+    display: flex;
+    color: #fafafa;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+.footer_info {
+    font-size: 1.2rem;
+    color: #fafafa;
+    font-weight: 400;
+}
+.footer_info p:last-child {
+    text-align: center;
+}
+.footer_info p:last-child span {
+    color: #cddc39;
+    font-weight: 800;
+}
+
+
+/* 태블릿 미디어 쿼리 768px 이상 */
+@media screen and (min-width:768px){
+    /* 1. 태블릿 Header */
+    .header {
+        padding: 18px 5%;
+        /* 위치기준값 */
+        position: relative;
+    }
+    /* Logo */
+    .header .logo {
+        /* 플롯 */
+        float: left;
+    }
+    .header .logo a {
+        font-size: 26px;
+        font-size: 1.625rem;
+        color: #836fa9;
+        letter-spacing: -2px;
+        font-weight: 500;
+    }
+    /* 태블릿 GNB */
+    .header .gnb {
+        /* GNB 보이도록 코딩 */
+        display: block !important;
+        /* 모바일 속성값 초기화 */
+        width: auto;
+        background: none;
+        /* 포지션 */
+        position: static;
+        /* 플롯 */
+        float: right;
+    }
+    .header .gnb li {
+        border-bottom: 0;
+        /* 플롯 */
+        float: left;
+        margin-left: 20px;
+    }
+    .header .gnb li a {
+        display: block;
+        font-size: 14px;
+        font-size: 0.875rem;
+        padding: 5px 0 0 0;
+    }
+
+    /* Hamberger Toggle */
+    .header .menu_toggle_btn {
+        width: 20px;
+        margin-top: 4px;
+        cursor: pointer;
+        /* 플롯 */
+        float: right;
+
+        /* 태블릿 추가 */
+        display: none;
+    }
+    .header .menu_toggle_btn span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: #b39ddb;
+    }
+    .header .menu_toggle_btn span:nth-child(2) {
+        margin: 5px 0;
+    }
+
+    /* 3-1. 태블릿 Display */
+    .display_section {
+        /* 속성값 수정 */
+        margin-top: 100px;
+        text-align: center;
+    }
+    .display_section .sec_title {
+        margin-bottom: 32px;
+    }
+    .display_section .desc {
+        color: #616161;
+        line-height: 2;
+    }
+
+    /* 3-2. 태블릿 Promotion */
+    .promotion_section {
+        /* 속성값 수정 */
+        margin-top: 110px;
+    }
+    .promotion_section .promotion_list li {
+        /* (768px) */
+        width: 177px;
+        /* (177/768)*100 = 23.046875 */
+        width: 23.046875%;
+        margin-left: 20px;
+        /* (20/768)*100 = 2.604166666666667 */
+        margin-left: 2.604166666666667%;
+
+        /* 플롯 */
+        float: left;
+        /* 속성값 수정 */
+        margin-top: 0;
+        text-align: center;
+    }
+    .promotion_section .promotion_list li:nth-child(1) {
+        margin-top: 0;
+        /* 속성추가 */
+        margin-left: 0;
+    }
+    .promotion_section .promotion_list li img {
+        width: 52px;
+        height: 52px;
+    }
+    .promotion_section .promotion_list li h3 {
+        margin: 30px 0 20px;
+        color: #836fa9;
+    }
+    .promotion_section .promotion_list li p {
+        font-family: 'PT Serif',serif;
+        font-size: 14px;
+        font-size: 0.875rem;
+        color: #616161;
+        line-height: 1.5;
+    }
+
+    /* 3-3. 태블릿 Work */
+    .filmo_section {
+        /* 속성값 수정 */
+        margin-top: 100px;
+    }
+    .filmo_section .sec_title {
+        margin: 0 auto;
+        text-align: center;
+        /* 속성값 수정 */
+        margin-bottom: 80px;
+    }
+    .filmo_section .filmo_list li {
+        width: 50%;
+        /* 플롯 */
+        float: left;
+    }
+    .filmo_section .filmo_list li a {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+    .filmo_section .filmo_list li img {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    /* 3-4. 태블릿 Blog */
+    .activi_section {
+        /* 속성값 수정 */
+        margin-top: 124px;
+    }
+    .activi_section .sec_title {
+        margin-bottom: 80px;
+        text-align: center;
+    }
+    .activi_section .activi_list li {
+        /* (768px) */
+        width: 242.6666666666667px;
+        /* (242.6666666666667/768)*100 = 31.597222222222225 */
+        width: 31.597222222222225%;
+        /* (20/768)*100 = 2.604166666666667 */
+        margin-left: 2.604166666666667%;
+        /* 플롯 */
+        float: left;
+        /* 속성값 수정 */
+        margin-top: 0;
+    }
+    .activi_section .activi_list li:nth-child(1) {
+        margin-top: 0;
+        margin-left: 0;
+    }
+
+    .activi_section .activi_list li img {
+        max-width: 100%;
+        width: 100%;
+    }
+    .activi_section .activi_list li time {
+        display: block;
+        font-size: 12px;
+        font-size: 0.75rem;
+        color: #9e9e9e;
+        margin: 10px 0;
+    }
+    .activi_section .blog_list li h3 {
+        color: #424242;
+        line-height: 1.6;
+    }
+
+    /* 3-5. 태블릿 Contact */
+    .apply_section {
+        /* 속성값 수정 */
+        margin-top: 180px;
+    
+    }
+    .apply_section .sec_title {
+        /* 속성값 수정 */
+        margin-bottom: 80px;
+        text-align: center;
+    }
+
+    input, textarea {
+        border-bottom: 1px solid #757575;
+        font-size: 12px;
+        font-size: 0.75rem;
+        font-family: 'Exo 2', sans-serif;
+        color: #836fa9;
+        border-radius: 0%;
+    }
+    /* 2단 구조 */
+    .apply_section .form_box .form {
+        width: 374px;
+        /* (374/768)*100 */
+        width: 48.69791666666667%;
+        margin-right: 20px;
+        /* (20/768)*100 */
+        margin-right: 2.604166666666667%;
+        /* 플롯 */
+        float: left;
+        
+    }
+    .apply_section .form_box .txta {
+        width: 374px;
+        /* (374/768)*100 */
+        width: 48.69791666666667%;
+        /* 플롯 */
+        float: right;
+    }
+
+    /* Input Form */
+    .apply_section .form_box .form input {
+        padding-bottom: 14px;
+        margin-bottom: 40px;
+    }
+
+    /* Textarea Form */
+    .apply_section .form_box .txta textarea {
+        height: 170px;
+    }
+    .apply_section .form_box .send_btn {
+        margin-top: 36px;
+        text-align: right;
+    }
+    .apply_section .form_box .send_btn button {
+        font-size: 12px;
+        font-size: 0.75rem;
+        color: #fff;
+        background: #836fa9;
+        padding: 15px;
+        cursor: pointer;
+    }
+
+    /* Footer */
+    footer {
+        margin-top: 106px;
+        background-color: #b39ddb;
+        padding-top: 20px;
+        padding-bottom: 30px;
+        line-height: 1.5;
+    }
+    .footer_information {
+        padding-left: 72px;
+        padding-right: 68px;
+    }
+    .footer_left,
+    .footer_contact {
+        margin-top: 40px;
+    }
+    .footer_gnb {
+        /* 플렉스 */
+        display: flex;
+        color: #fafafa;
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+    }
+    .footer_info {
+        font-size: 1.2rem;
+        color: #fafafa;
+        font-weight: 400;
+    }
+    .footer_info p:last-child {
+        text-align: center;
+    }
+    .footer_info p:last-child span {
+        color: #cddc39;
+        font-weight: 800;
+    }
+}
+
+/* PC 미디어 쿼리 1132px 이상 */
+@media screen and (min-width:1132px){
+    /* 3-1. PC Display */
+    .display_section {
+        margin-top: 100px;
+        /* 속성값수정 */
+        text-align: left;
+    }
+    .display_section .sec_title {
+        /* 속성값수정 */
+        margin-bottom: 0;
+        /* 플롯 */
+        float: left;
+    }
+    .display_section .desc {
+        color: #616161;
+        line-height: 2;
+        /* 플롯 */
+        float: right;
+        /* 위치기준 */
+        position: relative;
+        padding-left: 20px;
+    }
+
+    /* 데코 세로 막대 */
+    .display_section .desc:before {
+        content: "";
+        display: block;
+        width: 2px;
+        height: 44px;
+        background: #e0e0e0;
+        /* 포지션 */
+        position: absolute;
+        left: 0;
+        top: 10px;
+        z-index: 1;
+    }
+
+    /* .display_section {
+        font-family: 'Kanit', sans-serif;
+        padding: 20px;
+    }
+    .display_section h2 {
+        margin-left: 200px;
+        font-size: 3rem;
+        color: #836fa9;
+        float: left;
+        margin-right: 22%;
+    }
+    .display_section p {
+        width: 700px;
+        color: gray;
+        text-align: center;
+        margin-left: 20px;
+        float: left;
+    } */
+
+    /* 3-2. PC Promotion */
+    .promotion_section {
+        margin-top: 110px;
+    }
+    .promotion_section .promotion_list li {
+        /* (1132px) */
+        width: 268px;
+        /* (268/1132)*100 = 23.674911660777383 */
+        width: 23.674911660777383%;
+        margin-left: 20px;
+        /* (20/1132)*100 = 1.76678445229682 */
+        margin-left: 1.76678445229682%;
+
+        /* 플롯 */
+        float: left;
+        margin-top: 0;
+        text-align: center;
+    }
+    .promotion_section .promotion_list li:nth-child(1) {
+        margin-top: 0;
+        /* 속성추가 */
+        margin-left: 0;
+    }
+    .promotion_section .promotion_list li img {
+        width: 52px;
+        height: 52px;
+    }
+    .promotion_section .promotion_list li h3 {
+        margin: 30px 0 20px;
+        color: #836fa9;
+    }
+    .promotion_section .promotion_list li p {
+        font-family: 'PT Serif',serif;
+        font-size: 14px;
+        font-size: 0.875rem;
+        color: #616161;
+        line-height: 1.5;
+    }
+
+    /* 3-3. PC Work */
+    .filmo_section {
+        margin-top: 100px;
+    }
+    .filmo_section .sec_title {
+        margin: 0 auto;
+        /* 속성값 수정 */
+        /* text-align: left; */
+        margin-bottom: 80px;
+    }
+    .filmo_section .filmo_list li {
+        width: 25%;
+        /* 플롯 */
+        float: left;
+    }
+    .filmo_section .filmo_list li a {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+    .filmo_section .filmo_list li img {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    /* 3-4. PC Blog */
+    .activi_section {
+        width: 100%;
+        /* 속성값 수정 */
+        margin-top: 124px;
+    }
+    .activi_section .sec_title {
+        /* 속성값 수정 */
+        margin-bottom: 80px;
+        text-align: center;
+    }
+    .activi_section .activi_list {
+        width: 100%;
+    }
+    .activi_section .activi_list li {
+        /* (844px) */
+        width: 268px;
+        /* (160/844)*100 = 31.753554502369667 */
+        width: 18.95734597156398%;
+        /* (11/844)*100 = 2.3696682464454977 */
+        margin-left: 1.303317535545024%;
+        /* 속성값 수정 */
+        margin-top: 0;
+        /* 플롯 */
+        float: left;
+    }
+    .activi_section .activi_list li:nth-child(1) {
+        margin-top: 0;
+        margin-left: 0;
+    }
+
+    .activi_section .activi_list li img {
+        max-width: 100%;
+        width: 100%;
+    }
+    .activi_section .activi_list li time {
+        display: block;
+        font-size: 12px;
+        font-size: 0.75rem;
+        color: #9e9e9e;
+        margin: 10px 0;
+        margin-left: 10px;
+    }
+    .activi_section .activi_list li h3 {
+        font-size: 24px;
+        color: #424242;
+        line-height: 1.6;
+        margin-left: 15px;
+    }
+
+    /* 3-5. PC Contact */
+    .apply_section {
+        width: 50%;
+        margin-top: 180px;
+    }
+    .apply_section .sec_title {
+        /* 속성값 수정 */
+        margin-bottom: 80px;
+        text-align: center;
+    }
+    input, textarea {
+        border-bottom: 1px solid #757575;
+        font-size: 12px;
+        font-size: 0.75rem;
+        font-family: 'Montserrat', sans-serif;
+        color: #836fa9;
+        border-radius: 0%;
+    }
+    .apply_section .form_box {
+        width: 844px;
+        /* (844/1132)*100 = 74.55830388692578 */
+        width: 74.55830388692578%;
+        /* 플롯 */
+        float: right;
+    }
+    /* 2단 구조 */
+    .apply_section .form_box .form {
+        width: 300px;
+        /* (300/844)*100 = 35.54502369668246 */
+        width: 35.54502369668246%;
+        margin-right: 20px;
+        /* (20/844)*100 = 2.3696682464454977 */
+        margin-right: 2.3696682464454977%;
+        /* 플롯 */
+        float: left;
+    }
+    .apply_section .form_box .txta {
+        width: 300px;
+        /* (400/844)*100 = 47.39336492890995 */
+        width: 35.54502369668246%;
+        /* 플롯 */
+        float: left;
+    }
+
+    /* Input Form */
+    .apply_section .form_box .form input {
+        padding-bottom: 14px;
+        margin-bottom: 40px;
+    }
+    /* Textarea Form */
+    .apply_section .form_box .txta textarea {
+        height: 170px;
+    }
+    .apply_section .form_box .send_btn {
+        margin-top: 36px;
+        text-align: right;
+    }
+    .apply_section .form_box .send_btn button {
+        font-size: 12px;
+        font-size: 0.75rem;
+        color: #fff;
+        background: #836fa9;
+        padding: 15px;
+        cursor: pointer;
+    }
+
+    /* Footer */
+    footer {
+        margin-top: 106px;
+        background-color: #b39ddb;
+        padding-top: 20px;
+        padding-bottom: 30px;
+        line-height: 1.5;
+    }
+    .footer_information {
+        padding-left: 72px;
+        padding-right: 68px;
+    }
+    .footer_left,
+    .footer_contact {
+        margin-top: 40px;
+    }
+    .footer_gnb {
+        /* 플렉스 */
+        display: flex;
+        color: #fafafa;
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+    }
+    .footer_info {
+        font-size: 1rem;
+        color: #fafafa;
+        font-weight: 400;
+    }
+    .footer_info p:last-child {
+        text-align: center;
+    }
+    .footer_info p:last-child span {
+        color: #cddc39;
+        font-weight: 800;
+    }
+}
